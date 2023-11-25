@@ -9,12 +9,17 @@
     <div class="deck-select">
       <span>Select Your Deck</span>
       <div class="decks">
-        <div class="letter-square">
-          s
+        <div class="deck">
+          <mat-icon [svgIcon]="'github'"></mat-icon>
         </div>
-        <div class="letter-square">
-          s
+        <div class="deck">
+          <span>#</span>
         </div>
+      </div>
+    </div>
+    <div class="difficulty-select">
+      <div class="level" *ngFor="let level of LEVELS" [style.background-color]="level.color">
+        <span>{{level.title | uppercase}}</span>
       </div>
     </div>
   </div>

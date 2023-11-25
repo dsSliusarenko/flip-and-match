@@ -1,9 +1,7 @@
+@import "assets/styles/variables.scss";
+
 html, body {
   height: 100%;
-  margin: 0
-}
-
-body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
@@ -44,9 +42,7 @@ body {
   }
 
   .deck-select {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @extend .align-vertically-horizontally;
     flex-direction: column;
 
     font-size: 1.5rem;
@@ -55,12 +51,59 @@ body {
 
     .decks {
       display: flex;
-      justify-content: space-between;
-      width: 10%;
+      justify-content: center;
+
+      .deck {
+        @extend .border-radius-1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 3rem;
+        height: 3rem;
+        border: 2px solid black;
+        margin-right: 1rem;
+        cursor: pointer;
+        background-color: $purple-deck-card-background;
+
+        span {
+          margin: 0;
+        }
+      }
+
+      .deck:last-child{
+        margin-right: 0;
+      }
     }
 
     span {
       margin-bottom: 1rem;
+    }
+  }
+
+  .difficulty-select {
+    @extend .align-vertically-horizontally;
+
+    padding: 1rem 0 1rem 0;
+
+    .level {
+      @extend .border-solid-black;
+      @extend .border-radius-1rem;
+      @extend .align-vertically-horizontally;
+
+      width: 12rem;
+      height: 3rem;
+      font-weight: bold;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    div {
+      margin-right: 0.5rem;
+    }
+
+    div:last-child {
+      margin-right: 0;
     }
   }
 }
@@ -83,25 +126,33 @@ body {
   }
 }
 
-.square {
+.align-vertically-horizontally {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.border-radius-1rem {
+  border-radius: 1rem;
+}
+
+.border-solid-black {
+  border: 2px solid black;
+}
+
+.square {
+  @extend .border-radius-1rem;
+  @extend .align-vertically-horizontally;
+
   width: 3rem;
   height: 3rem;
 }
-
-.square:hover {
-  cursor: pointer;
-}
-
 .letter-square {
   @extend .square;
+  @extend .border-solid-black;
 
   font-weight: bold;
   font-size: 2rem;
-  border: 2px solid black;
-  border-radius: 1rem;
   background-color: white;
 }
 

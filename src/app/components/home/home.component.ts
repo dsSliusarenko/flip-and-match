@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {environment} from "../../../environment/environment.prod";
+import {LEVELS} from "./levels";
 
 @Component({
   selector: 'fam-home',
@@ -9,4 +10,5 @@ import {environment} from "../../../environment/environment.prod";
 export class HomeComponent {
 
   protected readonly environment = environment;
+  protected readonly LEVELS = LEVELS;
 }
