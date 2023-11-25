@@ -1,10 +1,12 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-
 import {AppComponent} from './app.component';
 import {LogoModule} from "./components/logo/logo.module";
 import {IconModule} from "./ui/icon/icon.module";
 import {HttpClientModule} from "@angular/common/http";
+import {AppRoutingModule} from "./app-routing.module";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {HomeModule} from "./components/home/home.module";
 
 @NgModule({
   declarations: [
@@ -12,9 +14,13 @@ import {HttpClientModule} from "@angular/common/http";
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     LogoModule,
-    IconModule
+    IconModule,
+    AppRoutingModule,
+    IconModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

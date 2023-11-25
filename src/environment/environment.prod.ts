@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  appTitle: 'flip and match',
+  appTitle: 'flips and match',
   links: [
     {
       icon: 'github',

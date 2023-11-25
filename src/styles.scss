@@ -1,20 +1,31 @@
-html, body { height: 100%; margin: 0 }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+  margin: 0
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 .container {
   display: grid;
   max-width: 1366px;
   width: 100%;
   margin: 0 auto;
-  background-color: #838383FF;
+
+  border-left: 1px solid black;
+  border-right: 1px solid black;
 }
 
 .container-fluid {
   width: 100%;
-  background-color: #838383;
+  background-color: #838383FF;
 }
 
 .home {
+  padding: 2rem 0 2rem 0;
+
   .links {
     margin: 1rem 0 1rem 0;
     display: flex;
@@ -27,9 +38,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
     mat-icon:hover {
       color: white;
-      transition: 0.3s;
+      transition: 0.5s;
       cursor: pointer;
-
     }
   }
 
@@ -38,7 +48,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 1rem;
 
     font-size: 1.5rem;
     font-weight: 700;
@@ -57,9 +66,20 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .logo {
+  display: flex;
+  justify-content: center;
+
   .letters {
     display: flex;
     justify-content: center;
+
+    div {
+      margin-right: 0.5rem;
+    }
+
+    div:last-child {
+      margin-right: 0;
+    }
   }
 }
 
@@ -69,6 +89,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   align-items: center;
   width: 3rem;
   height: 3rem;
+}
+
+.square:hover {
+  cursor: pointer;
 }
 
 .letter-square {
