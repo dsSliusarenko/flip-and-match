@@ -1,6 +1,5 @@
-body {
-  margin: 0;
-}
+html, body { height: 100%; margin: 0 }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .container {
   display: grid;
@@ -13,6 +12,27 @@ body {
 .container-fluid {
   width: 100%;
   background-color: black;
+}
+
+.home {
+
+  .links {
+    margin: 1rem 0 1rem 0;
+    display: flex;
+    justify-content: center;
+
+    mat-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+
+    mat-icon:hover {
+      color: white;
+      transition: 0.3s;
+      cursor: pointer;
+
+    }
+  }
 }
 
 .logo {
