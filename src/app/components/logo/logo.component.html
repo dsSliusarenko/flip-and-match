@@ -1,1 +1,13 @@
-<p>logo works!</p>
+<div class="logo">
+  <div class="letters">
+    <ng-container *ngFor="let letter of logoLetters">
+      <div class="brake-square" *ngIf="letter === ' '; else brakeSquare">
+      </div>
+      <ng-template #brakeSquare>
+        <div class="letter-square">
+          <span>{{letter | uppercase}}</span>
+        </div>
+      </ng-template>
+    </ng-container>
+  </div>
+</div>
