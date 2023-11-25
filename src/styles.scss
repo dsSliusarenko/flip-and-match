@@ -6,16 +6,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   max-width: 1366px;
   width: 100%;
   margin: 0 auto;
-  background-color: purple;
+  background-color: #838383FF;
 }
 
 .container-fluid {
   width: 100%;
-  background-color: black;
+  background-color: #838383;
 }
 
 .home {
-
   .links {
     margin: 1rem 0 1rem 0;
     display: flex;
@@ -33,26 +32,34 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
     }
   }
+
+  .deck-select {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 1rem;
+
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: monospace;
+
+    .decks {
+      display: flex;
+      justify-content: space-between;
+      width: 10%;
+    }
+
+    span {
+      margin-bottom: 1rem;
+    }
+  }
 }
 
 .logo {
   .letters {
     display: flex;
     justify-content: center;
-
-    .letter-square {
-      @extend .square;
-
-      font-weight: bold;
-      font-size: 2rem;
-      border: 2px solid black;
-      border-radius: 1rem;
-      background-color: white;
-    }
-
-    .brake-square {
-      @extend .square;
-    }
   }
 }
 
@@ -62,4 +69,18 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   align-items: center;
   width: 3rem;
   height: 3rem;
+}
+
+.letter-square {
+  @extend .square;
+
+  font-weight: bold;
+  font-size: 2rem;
+  border: 2px solid black;
+  border-radius: 1rem;
+  background-color: white;
+}
+
+.brake-square {
+  @extend .square;
 }
