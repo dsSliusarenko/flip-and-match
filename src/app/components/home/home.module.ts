@@ -4,6 +4,7 @@ import {HomeComponent} from './home.component';
 import {LogoModule} from "../logo/logo.module";
 import {MatIconModule} from "@angular/material/icon";
 import {IconModule} from "../../ui/icon/icon.module";
+import {ScoreChartModule} from "../score-chart/score-chart.module";
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import {IconModule} from "../../ui/icon/icon.module";
     CommonModule,
     LogoModule,
     IconModule,
-    MatIconModule
+    MatIconModule,
+    ScoreChartModule
   ]
 })
 export class HomeModule {

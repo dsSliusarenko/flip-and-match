@@ -126,6 +126,56 @@ html, body {
   }
 }
 
+.score-chart {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  .title {
+    align-self: center;
+    font-weight: bold;
+    font-size: 2rem;
+  }
+
+  .charts {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+
+    .chart {
+      @extend .border-radius-1rem;
+      @extend .border-solid-black;
+
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+      width: 12rem;
+
+      .position {
+        display: flex;
+        justify-content: space-between;
+
+
+        &__time {
+
+        }
+
+        &__name {
+
+        }
+      }
+    }
+
+    .chart {
+      margin-right: 0.5rem;
+    }
+
+    .chart:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
 .align-vertically-horizontally {
   display: flex;
   justify-content: center;
@@ -147,6 +197,7 @@ html, body {
   width: 3rem;
   height: 3rem;
 }
+
 .letter-square {
   @extend .square;
   @extend .border-solid-black;
