@@ -55,10 +55,11 @@ html, body {
 
       .deck {
         @extend .border-radius-1rem;
+        @extend .black-shadow-transition-back;
+
         display: flex;
         justify-content: center;
         align-items: center;
-
         width: 3rem;
         height: 3rem;
         border: 2px solid black;
@@ -69,6 +70,10 @@ html, body {
         span {
           margin: 0;
         }
+      }
+
+      .deck:hover {
+        @extend .black-shadow;
       }
 
       .deck:last-child{
@@ -90,13 +95,20 @@ html, body {
       @extend .border-solid-black;
       @extend .border-radius-1rem;
       @extend .align-vertically-horizontally;
+      @extend .black-shadow-transition-back;
+
 
       width: 12rem;
       height: 3rem;
       font-weight: bold;
       font-size: 2rem;
       cursor: pointer;
+      padding: 0 1rem 0 1rem;
     }
+
+    .level:hover {
+      @extend .black-shadow;
+    };
 
     div {
       margin-right: 0.5rem;
@@ -105,6 +117,31 @@ html, body {
     div:last-child {
       margin-right: 0;
     }
+  }
+
+  .reset-button {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0 1rem 0;
+
+    .button {
+      @extend .border-solid-black;
+      @extend .border-radius-1rem;
+      @extend .align-vertically-horizontally;
+      @extend .black-shadow-transition-back;
+
+      height: 3rem;
+      padding: 0 1rem 0 1rem;
+
+      font-weight: bold;
+      font-size: 2rem;
+      background-color: white;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      @extend .black-shadow;
+    };
   }
 }
 
@@ -209,4 +246,13 @@ html, body {
 
 .brake-square {
   @extend .square;
+}
+
+.black-shadow-transition-back {
+  transition: box-shadow 0.5s, transform 0.5s;
+}
+
+.black-shadow {
+  box-shadow: 5px 5px #000;
+  transform: translate(-5px, -5px);
 }
