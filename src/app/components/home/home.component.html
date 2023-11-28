@@ -9,10 +9,10 @@
     <div class="deck-select">
       <span class="title">Select Your Deck</span>
       <div class="decks">
-        <div class="deck">
+        <div class="deck" (click)="selectDeck(Deck.ICON)" [class.black-shadow]="selectedDeck === Deck.ICON">
           <mat-icon [svgIcon]="'github'"></mat-icon>
         </div>
-        <div class="deck">
+        <div class="deck" (click)="selectDeck(Deck.NUMBERS)" [class.black-shadow]="selectedDeck === Deck.NUMBERS">
           <span>#</span>
         </div>
       </div>

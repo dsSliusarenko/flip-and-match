@@ -3,7 +3,7 @@ export interface Level {
   color: string
 }
 
-export const LEVELS: Level[] = [
+export const Home: Level[] = [
   {
     title: 'easy',
     color: '#00FF01'
@@ -17,3 +17,8 @@ export const LEVELS: Level[] = [
     color: '#FA8072'
   }
 ]
+
+export enum Deck {
+  ICON = 'ICON',
+  NUMBERS = 'NUMBERS'
+}
