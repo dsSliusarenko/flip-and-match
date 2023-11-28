@@ -4,6 +4,7 @@ import {LevelsComponent} from "./levels.component";
 import {LevelsRoutingModule} from "./levels-routing.module";
 import { MediumComponent } from './medium/medium.component';
 import { HardComponent } from './hard/hard.component';
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { HardComponent } from './hard/hard.component';
     HardComponent
   ],
   imports: [
+    CommonModule,
     LevelsRoutingModule
   ],
   exports: []
