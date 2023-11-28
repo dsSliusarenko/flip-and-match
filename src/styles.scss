@@ -253,9 +253,14 @@ html, body {
 }
 
 .levels {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  //display: flex;
+  //flex-direction: column;
+  //justify-content: center;
+
+  .timer {
+    display: flex;
+    justify-content: center;
+  }
 
   .back-button {
     @include buttons-container;
@@ -269,9 +274,16 @@ html, body {
 .level {
   display: flex;
   justify-content: center;
-  margin-top: 2rem;
+  flex-direction: column;
+  align-items: center;
 
-  .cards {
+  &__timer {
+    margin: 1rem 0 2rem 0;
+    font-size: 2.5rem;
+    font-weight: bolder;
+  }
+
+  &__cards {
     .card {
       @include letter-square;
       background-color: $turquoise-level-card-background;

@@ -1,5 +1,8 @@
 <div class="level">
-  <div class="cards grid-x4">
+  <div class="level__timer">
+    {{timer * 1000 | date:'mm:ss'}}
+  </div>
+  <div class="level__cards grid-x4">
     <div class="card" *ngFor="let card of demoCards">
       {{1}}
     </div>
