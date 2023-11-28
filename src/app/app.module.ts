@@ -7,6 +7,8 @@ import {HttpClientModule} from "@angular/common/http";
 import {AppRoutingModule} from "./app-routing.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {HomeModule} from "./components/home/home.module";
+import {LevelsModule} from "./components/levels/levels.module";
+import {ScoreChartModule} from "./components/score-chart/score-chart.module";
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import {HomeModule} from "./components/home/home.module";
     IconModule,
     AppRoutingModule,
     IconModule,
-    HomeModule
+    HomeModule,
+    LevelsModule,
+    ScoreChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]

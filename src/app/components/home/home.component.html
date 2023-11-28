@@ -1,32 +1,24 @@
-<div class="home container-fluid gradient">
-  <div class="container">
-    <fam-logo></fam-logo>
-    <div class="links">
-      <div class="link" *ngFor="let link of environment.links">
-        <mat-icon [svgIcon]="link.icon"></mat-icon>
+<div class="home ">
+  <div class="deck-select">
+    <span class="title">Select Your Deck</span>
+    <div class="decks">
+      <div class="deck" (click)="selectDeck(Deck.ICON)" [class.black-shadow]="selectedDeck === Deck.ICON">
+        <mat-icon [svgIcon]="'github'"></mat-icon>
+      </div>
+      <div class="deck" (click)="selectDeck(Deck.NUMBERS)" [class.black-shadow]="selectedDeck === Deck.NUMBERS">
+        <span>#</span>
       </div>
     </div>
-    <div class="deck-select">
-      <span class="title">Select Your Deck</span>
-      <div class="decks">
-        <div class="deck" (click)="selectDeck(Deck.ICON)" [class.black-shadow]="selectedDeck === Deck.ICON">
-          <mat-icon [svgIcon]="'github'"></mat-icon>
-        </div>
-        <div class="deck" (click)="selectDeck(Deck.NUMBERS)" [class.black-shadow]="selectedDeck === Deck.NUMBERS">
-          <span>#</span>
-        </div>
-      </div>
+  </div>
+  <div class="difficulty-select">
+    <div class="level" *ngFor="let level of LEVELS" [style.background-color]="level.color">
+      <span>{{level.title | uppercase}}</span>
     </div>
-    <div class="difficulty-select">
-      <div class="level" *ngFor="let level of LEVELS" [style.background-color]="level.color">
-        <span>{{level.title | uppercase}}</span>
-      </div>
-    </div>
-    <fam-score-chart></fam-score-chart>
-    <div class="reset-button">
-      <div class="button">
-        RESET SCORES
-      </div>
+  </div>
+  <fam-score-chart></fam-score-chart>
+  <div class="reset-button">
+    <div class="button">
+      RESET SCORES
     </div>
   </div>
 </div>

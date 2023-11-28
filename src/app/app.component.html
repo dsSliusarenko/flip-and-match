@@ -1,1 +1,11 @@
-<router-outlet></router-outlet>
+<div class="container-fluid gradient">
+  <div class="container">
+    <fam-logo></fam-logo>
+    <div class="links">
+      <div class="link" *ngFor="let link of environment.links">
+        <mat-icon [svgIcon]="link.icon"></mat-icon>
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</div>
