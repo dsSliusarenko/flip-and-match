@@ -1,11 +1,17 @@
 <div class="logo">
   <div class="letters">
     <ng-container *ngFor="let letter of logoLetters">
-      <div class="brake-square" *ngIf="letter === ' '; else brakeSquare">
+      <div class="brake-square" *ngIf="letter === ' '; else letterSquare">
       </div>
-      <ng-template #brakeSquare>
-        <div class="letter-square">
-          <span>{{letter | uppercase}}</span>
+      <ng-template #letterSquare>
+        <div class="flip-square">
+          <div class="flip-square-inner">
+            <div class="flip-square-front">
+              <span>{{letter | uppercase}}</span>
+            </div>
+            <div class="flip-square-back">
+            </div>
+          </div>
         </div>
       </ng-template>
     </ng-container>

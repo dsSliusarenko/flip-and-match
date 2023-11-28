@@ -8,7 +8,6 @@ import {environment} from "../../../environment/environment.prod";
 })
 export class LogoComponent implements OnInit{
   protected readonly environment = environment;
-
   logoLetters!: string[];
 
   ngOnInit(): void {
