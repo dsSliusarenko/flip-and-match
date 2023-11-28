@@ -12,7 +12,11 @@ const famRoutes: Routes = [
   {
     path: 'home',
     component: HomeComponent
-  }
+  },
+  {
+    path: 'levels',
+    loadChildren: () => import('./components/levels/levels.module').then((m) => m.LevelsModule)
+  },
 ];
 
 @NgModule({
