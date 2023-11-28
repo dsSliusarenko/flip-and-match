@@ -11,7 +11,7 @@
     </div>
   </div>
   <div class="difficulty-select">
-    <div class="level" *ngFor="let level of LEVELS" [style.background-color]="level.color">
+    <div class="level" *ngFor="let level of LEVELS" [style.background-color]="level.color" [routerLink]="'/levels/' + level.title">
       <span>{{level.title | uppercase}}</span>
     </div>
   </div>
