@@ -18,9 +18,11 @@ export class HomeComponent {
     switch (deckType) {
       case Deck.NUMBERS:
         this.selectedDeck = Deck.NUMBERS;
+        localStorage.setItem('selectedDeck', JSON.stringify(Deck.NUMBERS));
         break;
       case Deck.ICON:
         this.selectedDeck = Deck.ICON;
+        localStorage.setItem('selectedDeck', JSON.stringify(Deck.ICON));
         break;
       default:
         break;
