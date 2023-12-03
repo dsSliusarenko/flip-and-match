@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {environment} from "../../../environment/environment.prod";
 import {Deck, Home, Level} from "./home";
+import {ScoreChartService} from "../../services/score-chart.service";
 
 @Component({
   selector: 'fam-home',
@@ -9,10 +10,15 @@ import {Deck, Home, Level} from "./home";
 })
 export class HomeComponent implements OnInit{
   protected readonly environment = environment;
+
+  // TODO: check naming and change color picker logic
   protected readonly LEVELS: Level[] = Home;
   protected readonly Deck = Deck;
 
   selectedDeck: Deck = Deck.ICONS;
+
+  constructor(private scoreChartService: ScoreChartService) {
+  }
 
   ngOnInit() {
     const savedDeck = localStorage.getItem('selectedDeck');
@@ -32,5 +38,9 @@ export class HomeComponent implements OnInit{
       default:
         break;
     }
+  }
+
+  resetScores(): void {
+    this.scoreChartService.setDefaultChart();
   }
 }

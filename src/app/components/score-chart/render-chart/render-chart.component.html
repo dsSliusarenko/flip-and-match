@@ -1,0 +1,12 @@
+<div class="render-charts">
+  <div class="chart" [style.background-color]="chartData.color">
+    <div class="position" *ngFor="let record of chartData.records">
+      <div class="position__time">
+        <span>{{record.time * 1000 | date:'mm:ss'}}</span>
+      </div>
+      <div class="position__name">
+        <span>{{record.playerName}}</span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -172,42 +172,44 @@ html, body {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  margin-top: 2rem;
 
   .charts {
     display: flex;
     justify-content: center;
     margin-top: 1rem;
+  }
 
-    .chart {
-      @extend .border-radius-1rem;
-      @extend .border-solid-black;
+  fam-render-chart {
+    margin-right: 0.5rem;
+  }
 
+  fam-render-chart:last-child {
+    margin-right: 0;
+  }
+}
+
+.render-charts {
+  .chart {
+    @extend .border-radius-1rem;
+    @extend .border-solid-black;
+
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 12rem;
+
+    .position {
       display: flex;
-      flex-direction: column;
-      padding: 1rem;
-      width: 12rem;
+      justify-content: space-between;
 
-      .position {
-        display: flex;
-        justify-content: space-between;
+      &__time {
 
-
-        &__time {
-
-        }
-
-        &__name {
-
-        }
       }
-    }
 
-    .chart {
-      margin-right: 0.5rem;
-    }
+      &__name {
 
-    .chart:last-child {
-      margin-right: 0;
+      }
     }
   }
 }

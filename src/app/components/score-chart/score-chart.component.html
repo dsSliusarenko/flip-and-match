@@ -3,16 +3,8 @@
     High Scores
   </span>
   <div class="charts">
-    <div class="chart" *ngFor="let chart of charts" [style.background-color]="chart.color">
-      <div class="position" *ngFor="let position of chart.results">
-        <div class="position__time">
-          <span>{{position.time}}</span>
-        </div>
-        <div class="position__name">
-          <span>{{position.name}}</span>
-        </div>
-      </div>
-
-    </div>
+    <fam-render-chart [chartData]="chart.easy"></fam-render-chart>
+    <fam-render-chart [chartData]="chart.medium"></fam-render-chart>
+    <fam-render-chart [chartData]="chart.hard"></fam-render-chart>
   </div>
 </div>
