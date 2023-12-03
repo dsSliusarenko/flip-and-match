@@ -24,12 +24,10 @@ export class HomeComponent implements OnInit{
       case Deck.NUMBERS:
         this.selectedDeck = Deck.NUMBERS;
         localStorage.setItem('selectedDeck', JSON.stringify(Deck.NUMBERS));
-        console.log('set: ', Deck.NUMBERS)
         break;
       case Deck.ICONS:
         this.selectedDeck = Deck.ICONS;
         localStorage.setItem('selectedDeck', JSON.stringify(Deck.ICONS));
-        console.log('set: ', Deck.ICONS)
         break;
       default:
         break;

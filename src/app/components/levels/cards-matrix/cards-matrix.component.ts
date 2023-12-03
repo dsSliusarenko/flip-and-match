@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Deck} from "../../home/home";
-import {Card, Levels} from "../levels";
+import {Card, IconsArray, Levels} from "../levels";
 import {Observable, Subject, takeUntil, timer} from 'rxjs';
 
 @Component({
@@ -12,6 +12,7 @@ export class CardsMatrixComponent implements OnInit {
   @Input() level!: Levels;
 
   protected readonly Deck = Deck;
+  protected readonly Levels = Levels;
 
   rxjsTimer: Observable<number> = timer(1000, 1000);
   destroy: Subject<any> = new Subject();
@@ -19,7 +20,9 @@ export class CardsMatrixComponent implements OnInit {
 
   selectedDeck!: any;
   pairsAmount!: number;
-  cardsToShow: Card[] = [];
+  cardsToShow: any[] = [];
+  icons: string[] = IconsArray;
+
 
   ngOnInit() {
     this.setDifficultyLevel();
@@ -45,17 +48,44 @@ export class CardsMatrixComponent implements OnInit {
   setDeck(): void {
     const savedDeck = localStorage.getItem('selectedDeck');
     this.selectedDeck = savedDeck ? JSON.parse(savedDeck) : Deck.ICONS;
+    console.log(this.selectedDeck)
   }
 
   initCards(): void {
     const numbers: number[] = Array.from({length: this.pairsAmount}, (_, index) => index + 1);
     const pairs: number[] = numbers.concat(numbers).sort(() => Math.random() - 0.5);
+    const icons: string[] = this.duplicateIcons(this.icons, this.pairsAmount * 2);
 
-    this.cardsToShow = pairs.map((value, index) => ({
-      id: index,
-      value: value,
-      show: false
-    }));
+    if (this.selectedDeck === Deck.NUMBERS) {
+      this.cardsToShow = pairs.map((value, index) => ({
+        id: index,
+        value: value,
+        show: false
+      }));
+    } else {
+      this.cardsToShow = icons.map((value, index) => ({
+        id: index,
+        value: value,
+        show: false
+      }));
+    }
+  }
+
+  duplicateIcons(iconsArray: string[], length: number): string[] {
+    const duplicatedIcons: string[] = [];
+
+    iconsArray.forEach((icon) => {
+      duplicatedIcons.push(icon, icon);
+    });
+
+    duplicatedIcons.splice(length);
+
+    for (let i = duplicatedIcons.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [duplicatedIcons[i], duplicatedIcons[j]] = [duplicatedIcons[j], duplicatedIcons[i]];
+    }
+
+    return duplicatedIcons;
   }
 
   initTimer(): void {

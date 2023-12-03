@@ -3,7 +3,7 @@
     {{timer * 1000 | date:'mm:ss'}}
   </div>
   <div class="cards-matrix__cards"
-       [ngClass]="{'grid-x4' : pairsAmount === 8, 'grid-x6' : pairsAmount === 18, 'grid-x8' : pairsAmount === 32}">
+       [ngClass]="{'grid-x4' : level === Levels.EASY, 'grid-x6' : level === Levels.MEDIUM, 'grid-x8' : level === Levels.HARD}">
     <div class="flip-square flip-card" *ngFor="let card of cardsToShow" (click)="turnOver(card)"
          [class.selected]="card.show" [class.matched]="card.matched">
       <div class="flip-square-inner">
@@ -12,9 +12,8 @@
           <mat-icon [svgIcon]="'one'" *ngIf="selectedDeck === Deck.NUMBERS"></mat-icon>
         </div>
         <div class="flip-square-back">
-<!--          <mat-icon [svgIcon]="'palette'" *ngIf="selectedDeck === Deck.ICONS"></mat-icon>-->
-<!--          <ng-container *ngIf="selectedDeck === Deck.NUMBERS"></ng-container>-->
-          {{ card.value }}
+          <mat-icon [svgIcon]="card.value" *ngIf="selectedDeck === Deck.ICONS"></mat-icon>
+          <span *ngIf="selectedDeck === Deck.NUMBERS">{{ card.value }}</span>
         </div>
       </div>
     </div>
