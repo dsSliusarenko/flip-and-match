@@ -231,7 +231,7 @@ html, body {
   }
 }
 
-.level {
+.cards-matrix {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -244,9 +244,22 @@ html, body {
   }
 
   &__cards {
-    .card {
-      @include letter-square;
-      background-color: $turquoise-level-card-background;
+    .flip-card {
+      cursor: pointer;
+
+      .flip-square-front {
+        background-color: $turquoise-level-card-background;
+        transition: 0.5s;
+      }
+
+      .flip-square-front:hover {
+        background-color: $aqua-level-card-background;
+        transition: 0.5s;
+      }
+
+      .flip-square-back {
+        background-color: white;
+      }
     }
   }
 }
@@ -316,23 +329,7 @@ html, body {
 
 
 
-.flip-card {
-  cursor: pointer;
 
-  .flip-square-front {
-    background-color: $turquoise-level-card-background;
-    transition: 0.5s;
-  }
-
-  .flip-square-front:hover {
-    background-color: $aqua-level-card-background;
-    transition: 0.5s;
-  }
-
-  .flip-square-back {
-    background-color: white;
-  }
-}
 
 
 .square {
