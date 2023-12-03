@@ -9,9 +9,11 @@
       <div class="flip-square-inner">
         <div class="flip-square-front">
           <mat-icon [svgIcon]="'palette'" *ngIf="selectedDeck === Deck.ICONS"></mat-icon>
-          <ng-container *ngIf="selectedDeck === Deck.NUMBERS"></ng-container>
+          <mat-icon [svgIcon]="'one'" *ngIf="selectedDeck === Deck.NUMBERS"></mat-icon>
         </div>
         <div class="flip-square-back">
+<!--          <mat-icon [svgIcon]="'palette'" *ngIf="selectedDeck === Deck.ICONS"></mat-icon>-->
+<!--          <ng-container *ngIf="selectedDeck === Deck.NUMBERS"></ng-container>-->
           {{ card.value }}
         </div>
       </div>

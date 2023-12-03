@@ -17,7 +17,7 @@ export class CardsMatrixComponent implements OnInit {
   destroy: Subject<any> = new Subject();
   timer: number = 0;
 
-  selectedDeck!: Deck;
+  selectedDeck!: any;
   pairsAmount!: number;
   cardsToShow: Card[] = [];
 
@@ -43,7 +43,8 @@ export class CardsMatrixComponent implements OnInit {
   }
 
   setDeck(): void {
-    this.selectedDeck = localStorage.getItem('selectedDeck') === Deck.NUMBERS ? Deck.NUMBERS : Deck.ICONS;
+    const savedDeck = localStorage.getItem('selectedDeck');
+    this.selectedDeck = savedDeck ? JSON.parse(savedDeck) : Deck.ICONS;
   }
 
   initCards(): void {
