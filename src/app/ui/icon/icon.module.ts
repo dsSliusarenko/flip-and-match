@@ -25,5 +25,14 @@ export class IconModule {
       'linkedin',
       domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/mat-linkedin.svg'),
     );
+    matIconRegistry.addSvgIcon(
+      'palette',
+      domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/mat-palette.svg'),
+    );
+    matIconRegistry.addSvgIcon(
+      'one',
+      domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/mat-one.svg'),
+    );
+
   }
 }

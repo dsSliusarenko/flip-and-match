@@ -19,6 +19,6 @@ export const Home: Level[] = [
 ]
 
 export enum Deck {
-  ICON = 'ICON',
+  ICONS = 'ICONS',
   NUMBERS = 'NUMBERS'
 }

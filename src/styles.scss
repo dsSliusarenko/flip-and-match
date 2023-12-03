@@ -164,47 +164,7 @@ html, body {
     display: flex;
     justify-content: center;
 
-    .flip-square {
-      @extend .square;
 
-      margin-right: 0.25rem;
-      margin-left: 0.25rem;
-      perspective: 1000px;
-    }
-
-    .flip-square-inner {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      text-align: center;
-      transition: transform 0.8s;
-      transform-style: preserve-3d;
-    }
-
-    .selected .flip-square-inner {
-      transform: rotateY(180deg);
-    }
-
-    .flip-square-front, .flip-square-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-    }
-
-    .flip-square-front {
-      @include letter-square;
-    }
-
-    .flip-square-back {
-      @extend .square;
-      @extend .border-solid-black;
-
-      left: -0.25rem;
-      background-color: $gray-letter-square-background;
-      transform: rotateY(180deg);
-    }
   }
 }
 
@@ -311,6 +271,69 @@ html, body {
   @include grid;
   grid-template-columns: repeat(8, 1fr);
 }
+
+.flip-square {
+  @extend .square;
+
+  margin-right: 0.25rem;
+  margin-left: 0.25rem;
+  perspective: 1000px;
+}
+
+.flip-square-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.selected .flip-square-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-square-front, .flip-square-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-square-front {
+  @include letter-square;
+}
+
+.flip-square-back {
+  @extend .square;
+  @extend .border-solid-black;
+
+  left: -0.25rem;
+  background-color: $gray-letter-square-background;
+  transform: rotateY(180deg);
+}
+
+
+
+.flip-card {
+  cursor: pointer;
+
+  .flip-square-front {
+    background-color: $turquoise-level-card-background;
+    transition: 0.5s;
+  }
+
+  .flip-square-front:hover {
+    background-color: $aqua-level-card-background;
+    transition: 0.5s;
+  }
+
+  .flip-square-back {
+    background-color: white;
+  }
+}
+
 
 .square {
   @extend .border-radius-1rem;

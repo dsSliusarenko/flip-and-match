@@ -2,11 +2,11 @@
   <div class="deck-select">
     <span class="title">Select Your Deck</span>
     <div class="decks">
-      <div class="deck" (click)="selectDeck(Deck.ICON)" [class.black-shadow]="selectedDeck === Deck.ICON">
-        <mat-icon [svgIcon]="'github'"></mat-icon>
+      <div class="deck" (click)="selectDeck(Deck.ICONS)" [class.black-shadow]="selectedDeck === Deck.ICONS">
+        <mat-icon [svgIcon]="'palette'"></mat-icon>
       </div>
       <div class="deck" (click)="selectDeck(Deck.NUMBERS)" [class.black-shadow]="selectedDeck === Deck.NUMBERS">
-        <span>#</span>
+        <mat-icon [svgIcon]="'one'"></mat-icon>
       </div>
     </div>
   </div>

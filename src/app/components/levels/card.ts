@@ -1,5 +1,6 @@
 export interface Card {
-  icon?: string,
-  number?: number,
-  // ordinalNumber: number
+  id: number;
+  value: number;
+  show: boolean;
+  matched?: boolean
 }

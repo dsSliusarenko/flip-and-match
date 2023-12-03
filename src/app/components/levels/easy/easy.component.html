@@ -3,8 +3,18 @@
     {{timer * 1000 | date:'mm:ss'}}
   </div>
   <div class="level__cards grid-x4">
-    <div class="card" *ngFor="let card of demoCards">
-      {{1}}
+
+    <div class="flip-square flip-card" *ngFor="let card of cardsToShow" (click)="turnOver(card)" [class.selected]="card.show">
+      <div class="flip-square-inner">
+        <div class="flip-square-front">
+          <mat-icon [svgIcon]="'palette'" *ngIf="selectedDeck === Deck.ICONS"></mat-icon>
+          <ng-container *ngIf="selectedDeck === Deck.NUMBERS"></ng-container>
+        </div>
+        <div class="flip-square-back">
+          {{ card.value }}
+        </div>
+      </div>
     </div>
+
   </div>
 </div>
