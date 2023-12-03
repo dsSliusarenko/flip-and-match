@@ -48,7 +48,6 @@ export class CardsMatrixComponent implements OnInit {
   setDeck(): void {
     const savedDeck = localStorage.getItem('selectedDeck');
     this.selectedDeck = savedDeck ? JSON.parse(savedDeck) : Deck.ICONS;
-    console.log(this.selectedDeck)
   }
 
   initCards(): void {

@@ -1,145 +1,25 @@
 import {Injectable} from "@angular/core";
-import {ScoreChart, ScoreRecord} from "../components/score-chart/chart";
+import {ScoreChart, ScoreChartExtended, ScoreRecord} from "../components/score-chart/chart";
 
 @Injectable({
   providedIn: "root"
 })
 export class ScoreChartService {
-  private scoreChart: ScoreChart = {
+  private scoreChart: ScoreChartExtended = {
     easy: {
+      title: 'easy',
       color: '#00FF01',
-      records: [
-        {
-          time: 0,
-          playerName: '----------'
-        },
-        {
-          time: 0,
-          playerName: '----------'
-        },
-        {
-          time: 0,
-          playerName: '----------'
-        },
-        {
-          time: 0,
-          playerName: '----------'
-        },
-        {
-          time: 0,
-          playerName: '----------'
-        },
-        {
-          time: 0,
-          playerName: '----------'
-        },
-        {
-          time: 0,
-          playerName: '----------'
-        },
-        {
-          time: 0,
-          playerName: '----------'
-        },
-        {
-          time: 0,
-          playerName: '----------'
-        },
-        {
-          time: 0,
-          playerName: '----------'
-        }
-      ]
+      records: []
     },
     medium: {
+      title: 'medium',
       color: '#FFFF01',
-      records: [
-        {
-          time: 0,
-          playerName: '----------'
-        },
-        {
-          time: 0,
-          playerName: '----------'
-        },
-        {
-          time: 0,
-          playerName: '----------'
-        },
-        {
-          time: 0,
-          playerName: '----------'
-        },
-        {
-          time: 0,
-          playerName: '----------'
-        },
-        {
-          time: 0,
-          playerName: '----------'
-        },
-        {
-          time: 0,
-          playerName: '----------'
-        },
-        {
-          time: 0,
-          playerName: '----------'
-        },
-        {
-          time: 0,
-          playerName: '----------'
-        },
-        {
-          time: 0,
-          playerName: '----------'
-        }
-      ]
+      records: []
     },
     hard: {
+      title: 'hard',
       color: '#FA8072',
-      records: [
-        {
-          time: 0,
-          playerName: '----------'
-        },
-        {
-          time: 0,
-          playerName: '----------'
-        },
-        {
-          time: 0,
-          playerName: '----------'
-        },
-        {
-          time: 0,
-          playerName: '----------'
-        },
-        {
-          time: 0,
-          playerName: '----------'
-        },
-        {
-          time: 0,
-          playerName: '----------'
-        },
-        {
-          time: 0,
-          playerName: '----------'
-        },
-        {
-          time: 0,
-          playerName: '----------'
-        },
-        {
-          time: 0,
-          playerName: '----------'
-        },
-        {
-          time: 0,
-          playerName: '----------'
-        }
-      ]
+      records: []
     }
   }
 
@@ -154,7 +34,21 @@ export class ScoreChartService {
     this.scoreChart.hard.records = Array(10).fill(emptyRecord);
   }
 
-  getScoreChart(): ScoreChart {
+  getScoreChart(): ScoreChartExtended {
     return this.scoreChart;
+  }
+
+  getLevelsSpecifications(): ScoreChart {
+    const { easy, medium, hard } = this.scoreChart;
+
+    const { records: _, ...easyWithoutRecords } = easy;
+    const { records: __, ...mediumWithoutRecords } = medium;
+    const { records: ___, ...hardWithoutRecords } = hard;
+
+    return {
+      easy: easyWithoutRecords,
+      medium: mediumWithoutRecords,
+      hard: hardWithoutRecords
+    };
   }
 }

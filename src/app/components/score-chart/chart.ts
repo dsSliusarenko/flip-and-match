@@ -1,16 +1,34 @@
 export interface ScoreChart {
-    easy: {
-        color: string,
-        records: ScoreRecord[];
-    };
-    medium: {
-        color: string,
-        records: ScoreRecord[];
-    };
-    hard: {
-        color: string,
-        records: ScoreRecord[];
-    };
+  easy: {
+    title: string,
+    color: string,
+  };
+  medium: {
+    title: string,
+    color: string,
+  };
+  hard: {
+    title: string,
+    color: string,
+  };
+}
+
+export interface ScoreChartExtended extends ScoreChart {
+  easy: {
+    title: string,
+    color: string,
+    records: ScoreRecord[];
+  };
+  medium: {
+    title: string,
+    color: string,
+    records: ScoreRecord[];
+  };
+  hard: {
+    title: string,
+    color: string,
+    records: ScoreRecord[];
+  };
 }
 
 export interface ScoreRecord {

@@ -1,20 +1,19 @@
 import {Component, OnInit} from '@angular/core';
 import {environment} from "../../../environment/environment.prod";
-import {Deck, Home, Level} from "./home";
+import {Deck} from "./home";
 import {ScoreChartService} from "../../services/score-chart.service";
+import {ScoreChart} from "../score-chart/chart";
 
 @Component({
   selector: 'fam-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit{
+export class HomeComponent implements OnInit {
   protected readonly environment = environment;
-
-  // TODO: check naming and change color picker logic
-  protected readonly LEVELS: Level[] = Home;
   protected readonly Deck = Deck;
 
+  levels!: ScoreChart;
   selectedDeck: Deck = Deck.ICONS;
 
   constructor(private scoreChartService: ScoreChartService) {
@@ -23,6 +22,7 @@ export class HomeComponent implements OnInit{
   ngOnInit() {
     const savedDeck = localStorage.getItem('selectedDeck');
     this.selectedDeck = savedDeck ? JSON.parse(savedDeck) : Deck.ICONS;
+    this.levels = this.scoreChartService.getLevelsSpecifications()
   }
 
   selectDeck(deckType: Deck): void {

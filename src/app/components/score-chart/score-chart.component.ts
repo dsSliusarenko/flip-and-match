@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ScoreChartService} from "../../services/score-chart.service";
-import {ScoreChart} from "./chart";
+import {ScoreChartExtended} from "./chart";
 
 @Component({
   selector: 'fam-score-chart',
@@ -8,7 +8,7 @@ import {ScoreChart} from "./chart";
   styleUrls: ['./score-chart.component.scss']
 })
 export class ScoreChartComponent implements OnInit {
-  chart!: ScoreChart;
+  chart!: ScoreChartExtended;
 
   constructor(private scoreChartService: ScoreChartService) {
   }

@@ -11,8 +11,14 @@
     </div>
   </div>
   <div class="difficulty-select">
-    <div class="level" *ngFor="let level of LEVELS" [style.background-color]="level.color" [routerLink]="'/levels/' + level.title">
-      <span>{{level.title | uppercase}}</span>
+    <div class="level" [style.background-color]="levels.easy.color" [routerLink]="'/levels/' + levels.easy.title">
+      <span>{{levels.easy.title | uppercase}}</span>
+    </div>
+    <div class="level" [style.background-color]="levels.medium.color" [routerLink]="'/levels/' + levels.medium.title">
+      <span>{{levels.medium.title | uppercase}}</span>
+    </div>
+    <div class="level" [style.background-color]="levels.hard.color" [routerLink]="'/levels/' + levels.hard.title">
+      <span>{{levels.hard.title | uppercase}}</span>
     </div>
   </div>
   <fam-score-chart></fam-score-chart>
