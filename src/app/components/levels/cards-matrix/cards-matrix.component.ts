@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Deck} from "../../home/home";
-import {Card} from "../card";
+import {Card, Levels} from "../levels";
 import {Observable, Subject, takeUntil, timer} from 'rxjs';
 
 @Component({
@@ -9,7 +9,7 @@ import {Observable, Subject, takeUntil, timer} from 'rxjs';
   styleUrls: ['./cards-matrix.component.scss']
 })
 export class CardsMatrixComponent implements OnInit {
-  @Input() pairsAmount!: number;
+  @Input() level!: Levels;
 
   protected readonly Deck = Deck;
 
@@ -18,12 +18,28 @@ export class CardsMatrixComponent implements OnInit {
   timer: number = 0;
 
   selectedDeck!: Deck;
+  pairsAmount!: number;
   cardsToShow: Card[] = [];
 
   ngOnInit() {
+    this.setDifficultyLevel();
     this.setDeck();
     this.initCards();
     this.initTimer();
+  }
+
+  setDifficultyLevel(): void {
+    switch (this.level) {
+      case Levels.EASY:
+        this.pairsAmount = 8;
+        break;
+      case Levels.MEDIUM:
+        this.pairsAmount = 18;
+        break;
+      case Levels.HARD:
+        this.pairsAmount = 32;
+        break;
+    }
   }
 
   setDeck(): void {
@@ -62,7 +78,7 @@ export class CardsMatrixComponent implements OnInit {
     }
 
     if (this.areAllCardsTurned()) {
-     this.makeScoreRecord();
+      this.makeScoreRecord();
     }
   }
 

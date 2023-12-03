@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Levels} from "../levels";
 
 @Component({
   selector: 'fam-hard',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./hard.component.scss']
 })
 export class HardComponent {
-
+  protected readonly Levels = Levels;
 }

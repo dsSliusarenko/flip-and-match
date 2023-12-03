@@ -4,3 +4,9 @@ export interface Card {
   show: boolean;
   matched?: boolean
 }
+
+export enum Levels {
+  EASY = 'EASY',
+  MEDIUM = 'MEDIUM',
+  HARD = 'HARD',
+}

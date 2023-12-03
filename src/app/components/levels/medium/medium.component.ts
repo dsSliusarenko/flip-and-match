@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {Levels} from "../levels";
 
 @Component({
   selector: 'fam-medium',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./medium.component.scss']
 })
 export class MediumComponent {
-
+  protected readonly Levels = Levels;
 }

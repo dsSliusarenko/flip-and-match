@@ -261,6 +261,21 @@ html, body {
         background-color: white;
       }
     }
+
+    .flip-square.matched {
+      animation: fadeOut 0.5s ease forwards;
+    }
+
+    @keyframes fadeOut {
+      0% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(0);
+      }
+    }
   }
 }
 
@@ -326,11 +341,6 @@ html, body {
   background-color: $gray-letter-square-background;
   transform: rotateY(180deg);
 }
-
-
-
-
-
 
 .square {
   @extend .border-radius-1rem;
