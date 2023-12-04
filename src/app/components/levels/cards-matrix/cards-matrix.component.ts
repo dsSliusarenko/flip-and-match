@@ -108,7 +108,7 @@ export class CardsMatrixComponent implements OnInit {
     }
 
     if (this.areAllCardsTurned()) {
-      this.makeScoreRecord();
+      this.moveToEndGameScreen();
     }
   }
 
@@ -116,7 +116,7 @@ export class CardsMatrixComponent implements OnInit {
     return this.cardsToShow.every((card: Card) => card.show);
   }
 
-  makeScoreRecord(): void {
+  moveToEndGameScreen(): void {
     console.log('done')
   }
 }
