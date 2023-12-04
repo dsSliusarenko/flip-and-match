@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Deck} from "../../home/home";
-import {Card, IconsArray, Levels} from "../levels";
+import {Deck} from "../../components/home/home";
+import {Card, IconsArray, Levels} from "../../components/levels/levels";
 import {Observable, Subject, takeUntil, timer} from 'rxjs';
 
 @Component({
