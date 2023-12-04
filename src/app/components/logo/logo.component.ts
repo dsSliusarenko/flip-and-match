@@ -1,16 +1,13 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {environment} from "../../../environment/environment.prod";
+import {AnimationType} from "../../ui/flip-cards-render/flip-cards";
 
 @Component({
   selector: 'fam-logo',
   templateUrl: './logo.component.html',
   styleUrls: ['./logo.component.scss']
 })
-export class LogoComponent implements OnInit{
+export class LogoComponent{
   protected readonly environment = environment;
-  logoLetters!: string[];
-
-  ngOnInit(): void {
-    this.logoLetters = environment.appTitle.split('');
-  }
+  protected readonly AnimationType = AnimationType;
 }

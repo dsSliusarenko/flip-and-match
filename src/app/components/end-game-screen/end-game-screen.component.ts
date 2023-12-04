@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'fam-end-game-screen',
@@ -6,5 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./end-game-screen.component.scss']
 })
 export class EndGameScreenComponent {
-
 }

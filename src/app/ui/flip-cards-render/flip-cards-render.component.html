@@ -1,1 +1,17 @@
-<p>flip-cards-render works!</p>
+<div class="flip-card-render">
+  <ng-container *ngFor="let letter of textToRender">
+    <div class="brake-square" *ngIf="letter === ' '; else letterSquare">
+    </div>
+    <ng-template #letterSquare>
+      <div class="flip-square">
+        <div class="flip-square-inner">
+          <div class="flip-square-front">
+            <span>{{letter | uppercase}}</span>
+          </div>
+          <div class="flip-square-back">
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </ng-container>
+</div>

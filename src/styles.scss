@@ -159,13 +159,11 @@ html, body {
 .logo {
   display: flex;
   justify-content: center;
+}
 
-  .letters {
-    display: flex;
-    justify-content: center;
-
-
-  }
+.flip-card-render {
+  display: flex;
+  justify-content: center;
 }
 
 .score-chart {
