@@ -3,6 +3,8 @@ import {environment} from "../../../environment/environment.prod";
 import {Deck} from "./home";
 import {ScoreChartService} from "../../services/score-chart.service";
 import {ScoreChart} from "../score-chart/chart";
+import {DialogComponent} from "../../ui/dialog/dialog.component";
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'fam-home',
@@ -16,7 +18,7 @@ export class HomeComponent implements OnInit {
   levels!: ScoreChart;
   selectedDeck: Deck = Deck.ICONS;
 
-  constructor(private scoreChartService: ScoreChartService) {
+  constructor(private scoreChartService: ScoreChartService, public dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -40,7 +42,7 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  resetScores(): void {
-    this.scoreChartService.setDefaultChart();
+  openDialog(): void {
+    this.dialog.open(DialogComponent);
   }
 }

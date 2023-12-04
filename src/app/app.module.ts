@@ -9,6 +9,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {HomeModule} from "./components/home/home.module";
 import {LevelsModule} from "./components/levels/levels.module";
 import {ScoreChartModule} from "./components/score-chart/score-chart.module";
+import {DialogModule} from "./ui/dialog/dialog.module";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {ScoreChartModule} from "./components/score-chart/score-chart.module";
     IconModule,
     HomeModule,
     LevelsModule,
-    ScoreChartModule
+    ScoreChartModule,
+    DialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

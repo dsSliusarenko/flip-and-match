@@ -283,6 +283,41 @@ html, body {
   }
 }
 
+.custom-dialog{
+  background-color: $blue-dialog-background;
+  padding: 0.75rem;
+
+  &__buttons {
+    @include buttons-container;
+
+    .button {
+      background-color: $yellow-dialog-button-background;
+    }
+
+    .red-background {
+      background-color: red;
+    }
+  }
+
+  &__buttons, .mat-mdc-dialog-actions, .mdc-dialog__actions {
+    display: flex;
+    justify-content: center;
+
+    div {
+      margin-right: 0.5rem;
+    }
+
+    div:last-child {
+      margin-top: 0;
+    }
+  }
+
+  span {
+    @extend .title;
+    color: black;
+  }
+}
+
 @mixin grid {
   display: grid;
   grid-gap: 1rem;
