@@ -3,12 +3,12 @@
     <div class="brake-square" *ngIf="letter === ' '; else letterSquare">
     </div>
     <ng-template #letterSquare>
-      <div class="flip-square">
+      <div class="flip-square" [ngClass]="{'selected': isFlipped}">
         <div class="flip-square-inner">
           <div class="flip-square-front">
             <span>{{letter | uppercase}}</span>
           </div>
-          <div class="flip-square-back">
+          <div class="flip-square-back" [ngClass]="{'visible': isFlipped}">
           </div>
         </div>
       </div>

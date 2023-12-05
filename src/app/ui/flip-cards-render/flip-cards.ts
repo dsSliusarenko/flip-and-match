@@ -1,4 +1,4 @@
 export enum AnimationType {
-  TITLE = 'TITLE',
+  LOGO = 'LOGO',
   END_GAME = 'END_GAME'
 }
