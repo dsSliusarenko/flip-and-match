@@ -1,7 +1,7 @@
 <div class="levels">
   <router-outlet></router-outlet>
   <div class="back-button">
-    <div class="button" [routerLink]="'/home'">
+    <div class="button" [routerLink]="'/home'" (click)="setIsGameStarted()">
       <span>BACK</span>
     </div>
   </div>
