@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Deck} from "../../components/home/home";
 import {Card, IconsArray, Levels} from "../../components/levels/levels";
 import {Observable, Subject, takeUntil, timer} from 'rxjs';
+import {NavigationExtras, Router} from "@angular/router";
 
 @Component({
   selector: 'fam-cards-matrix',
@@ -23,6 +24,8 @@ export class CardsMatrixComponent implements OnInit {
   cardsToShow: any[] = [];
   icons: string[] = IconsArray;
 
+  constructor(private router: Router) {
+  }
 
   ngOnInit() {
     this.setDifficultyLevel();
@@ -117,6 +120,13 @@ export class CardsMatrixComponent implements OnInit {
   }
 
   moveToEndGameScreen(): void {
-    console.log('done')
+    const queryParams: NavigationExtras = {
+      queryParams: {
+        gameLevel: this.level,
+        levelTime: this.timer
+      }
+    };
+
+    this.router.navigate(['/win'], queryParams);
   }
 }

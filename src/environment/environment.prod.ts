@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
   appTitle: 'flips and match',
-  winTitle: 'you did it',
+  winTitle: 'wow you won',
   links: [
     {
       icon: 'github',

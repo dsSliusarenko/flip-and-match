@@ -281,7 +281,7 @@ html, body {
   }
 }
 
-.custom-dialog{
+.custom-dialog {
   background-color: $blue-dialog-background;
   padding: 0.75rem;
 
@@ -313,6 +313,50 @@ html, body {
   span {
     @extend .title;
     color: black;
+  }
+}
+
+.end-game-screen {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  .level-chart {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .level-score {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 1rem;
+
+    span:last-child {
+      margin-top: 1rem;
+    }
+  }
+
+  .name-input {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+
+    .mat-mdc-form-field-subscript-wrapper, .mat-mdc-form-field-bottom-align ng-tns-c17-0 {
+      display: none;
+    }
+  }
+
+  .buttons {
+    @include buttons-container;
+    margin: 0;
+
+    .disabled {
+      background-color: gray;
+    }
   }
 }
 

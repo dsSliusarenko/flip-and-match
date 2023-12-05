@@ -8,12 +8,13 @@ import {RenderChartComponent} from './render-chart/render-chart.component';
     ScoreChartComponent,
     RenderChartComponent
   ],
-  exports: [
-    ScoreChartComponent
-  ],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [
+    ScoreChartComponent,
+    RenderChartComponent
+  ],
 })
 export class ScoreChartModule {
 }

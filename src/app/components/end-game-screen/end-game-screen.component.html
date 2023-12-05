@@ -1,1 +1,30 @@
-<fam-flip-cards-render [inputText]="environment.winTitle" [animationType]="AnimationType.END_GAME"></fam-flip-cards-render>
+<div class="end-game-screen">
+  <fam-flip-cards-render [inputText]="environment.winTitle"
+                         [animationType]="AnimationType.END_GAME"></fam-flip-cards-render>
+  <div class="level-chart">
+    <fam-render-chart [chartData]="chart.easy" *ngIf="selectedDifficultyLevel===Levels.EASY"></fam-render-chart>
+    <fam-render-chart [chartData]="chart.medium" *ngIf="selectedDifficultyLevel===Levels.MEDIUM"></fam-render-chart>
+    <fam-render-chart [chartData]="chart.hard" *ngIf="selectedDifficultyLevel===Levels.HARD"></fam-render-chart>
+  </div>
+  <div class="level-score">
+    <span class="title">YOUR SCORE:</span>
+    <span class="title">{{levelTime * 1000| date:'mm:ss'}}</span>
+  </div>
+  <form [formGroup]="scoreRecordForm">
+    <div class="name-input">
+      <mat-form-field class="name-input">
+        <mat-label>Type your name</mat-label>
+        <input matInput formControlName="levelTime">
+      </mat-form-field>
+      <mat-hint
+        *ngIf="scoreRecordForm.controls['levelTime'].invalid && (scoreRecordForm.controls['levelTime'].touched)">
+        This field is required
+      </mat-hint>
+    </div>
+    <div class="buttons">
+      <div class="button" [ngClass]="{'disabled': scoreRecordForm.invalid}" (click)="makeScoreRecord()">
+        <span>SUBMIT</span>
+      </div>
+    </div>
+  </form>
+</div>
