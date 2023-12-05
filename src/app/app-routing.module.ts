@@ -22,7 +22,7 @@ const famRoutes: Routes = [
   {
     path: 'win',
     component: EndGameScreenComponent,
-    canActivate: [EndGameScreenGuard]
+    // canActivate: [EndGameScreenGuard]
   },
 ];
 

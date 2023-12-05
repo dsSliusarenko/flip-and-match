@@ -10,6 +10,7 @@ import {HomeModule} from "./components/home/home.module";
 import {LevelsModule} from "./components/levels/levels.module";
 import {ScoreChartModule} from "./components/score-chart/score-chart.module";
 import {DialogModule} from "./ui/dialog/dialog.module";
+import {EndGameScreenModule} from "./components/end-game-screen/end-game-screen.module";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {DialogModule} from "./ui/dialog/dialog.module";
     HomeModule,
     LevelsModule,
     ScoreChartModule,
-    DialogModule
+    DialogModule,
+    EndGameScreenModule
   ],
   providers: [],
   bootstrap: [AppComponent]
