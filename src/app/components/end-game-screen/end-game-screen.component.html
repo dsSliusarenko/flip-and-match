@@ -7,7 +7,7 @@
     <fam-render-chart [chartData]="chart.hard" *ngIf="selectedDifficultyLevel===Levels.HARD"></fam-render-chart>
   </div>
   <div class="level-score">
-    <span class="title">YOUR SCORE:</span>
+    <span class="title">YOUR TIME:</span>
     <span class="title">{{levelTime * 1000| date:'mm:ss'}}</span>
   </div>
   <form [formGroup]="scoreRecordForm">
