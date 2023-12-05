@@ -7,6 +7,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {Levels} from "../levels/levels";
 import {Subscription} from "rxjs";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {GameStatusService} from "../../services/game-status.service";
 
 @Component({
   selector: 'fam-end-game-screen',
@@ -31,11 +32,14 @@ export class EndGameScreenComponent implements OnInit, OnDestroy {
     private scoreChartService: ScoreChartService,
     private route: ActivatedRoute,
     private router: Router,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private gameStatusService: GameStatusService
   ) {
   }
 
   ngOnInit(): void {
+    this.gameStatusService.setIsGameStartedFalse();
+
     this.chart = this.scoreChartService.getScoreChart();
 
     this.scoreRecordForm = this.formBuilder.group({
