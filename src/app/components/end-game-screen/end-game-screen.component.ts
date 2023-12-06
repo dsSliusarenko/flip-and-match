@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {AnimationType} from "../../ui/flip-cards-render/flip-cards";
 import {environment} from "../../../environment/environment.prod";
-import {ScoreChartExtended} from "../score-chart/chart";
+import {ScoreChartExtended, ScoreRecord} from "../score-chart/chart";
 import {ScoreChartService} from "../../services/score-chart.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Levels} from "../levels/levels";
@@ -43,7 +43,7 @@ export class EndGameScreenComponent implements OnInit, OnDestroy {
     this.chart = this.scoreChartService.getScoreChart();
 
     this.scoreRecordForm = this.formBuilder.group({
-      levelTime: ['', Validators.required],
+      playerName: ['', Validators.required],
     });
 
     this.subscriptions.add(
@@ -56,7 +56,13 @@ export class EndGameScreenComponent implements OnInit, OnDestroy {
 
   makeScoreRecord(): void {
     if (this.scoreRecordForm.valid) {
-      // add logic for sending the record to the chart
+
+      const scoreRecord: ScoreRecord = {
+        time: this.levelTime,
+        playerName: this.scoreRecordForm.get('playerName')?.value
+      }
+
+      this.scoreChartService.makeNewRecord(scoreRecord, this.selectedDifficultyLevel);
       this.router.navigate(['/home']);
     }
   }

@@ -14,10 +14,10 @@
     <div class="name-input">
       <mat-form-field class="name-input">
         <mat-label>Type your name</mat-label>
-        <input matInput formControlName="levelTime">
+        <input matInput formControlName="playerName">
       </mat-form-field>
       <mat-hint
-        *ngIf="scoreRecordForm.controls['levelTime'].invalid && (scoreRecordForm.controls['levelTime'].touched)">
+        *ngIf="scoreRecordForm.controls['playerName'].invalid && (scoreRecordForm.controls['playerName'].touched)">
         This field is required
       </mat-hint>
     </div>
