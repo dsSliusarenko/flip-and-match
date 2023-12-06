@@ -27,7 +27,7 @@ export class CardsMatrixComponent implements OnInit {
   constructor(private router: Router) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.setDifficultyLevel();
     this.setDeck();
     this.initCards();

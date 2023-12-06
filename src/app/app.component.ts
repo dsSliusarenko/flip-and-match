@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {environment} from "../environment/environment.prod";
 import {ScoreChartService} from "./services/score-chart.service";
 
@@ -7,9 +7,8 @@ import {ScoreChartService} from "./services/score-chart.service";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent{
+export class AppComponent {
   protected readonly environment = environment;
-  title = 'flip-and-match';
 
   constructor(private scoreChartService: ScoreChartService) {
     this.scoreChartService.setDefaultChart();

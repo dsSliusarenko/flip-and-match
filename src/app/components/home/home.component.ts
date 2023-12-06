@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
   constructor(private scoreChartService: ScoreChartService, public dialog: MatDialog) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     const savedDeck = localStorage.getItem('selectedDeck');
     this.selectedDeck = savedDeck ? JSON.parse(savedDeck) : Deck.ICONS;
     this.levels = this.scoreChartService.getLevelsSpecifications()

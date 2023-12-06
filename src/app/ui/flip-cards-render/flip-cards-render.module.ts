@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {FlipCardsRenderComponent} from "./flip-cards-render.component";
 
 @NgModule({
@@ -13,4 +13,5 @@ import {FlipCardsRenderComponent} from "./flip-cards-render.component";
     FlipCardsRenderComponent
   ]
 })
-export class FlipCardsRenderModule { }
+export class FlipCardsRenderModule {
+}

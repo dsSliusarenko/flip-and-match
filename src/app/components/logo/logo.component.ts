@@ -7,7 +7,7 @@ import {AnimationType} from "../../ui/flip-cards-render/flip-cards";
   templateUrl: './logo.component.html',
   styleUrls: ['./logo.component.scss']
 })
-export class LogoComponent{
+export class LogoComponent {
   protected readonly environment = environment;
   protected readonly AnimationType = AnimationType;
 }

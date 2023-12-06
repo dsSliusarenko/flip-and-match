@@ -11,14 +11,14 @@ import {RouterLink} from "@angular/router";
   declarations: [
     HomeComponent
   ],
-    imports: [
-        CommonModule,
-        LogoModule,
-        IconModule,
-        MatIconModule,
-        ScoreChartModule,
-        RouterLink
-    ]
+  imports: [
+    CommonModule,
+    LogoModule,
+    IconModule,
+    MatIconModule,
+    ScoreChartModule,
+    RouterLink
+  ]
 })
 export class HomeModule {
 }

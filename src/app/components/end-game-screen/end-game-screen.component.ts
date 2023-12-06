@@ -17,7 +17,6 @@ import {GameStatusService} from "../../services/game-status.service";
 export class EndGameScreenComponent implements OnInit, OnDestroy {
   protected readonly AnimationType = AnimationType;
   protected readonly Levels = Levels;
-
   protected readonly environment = environment;
 
   chart!: ScoreChartExtended;

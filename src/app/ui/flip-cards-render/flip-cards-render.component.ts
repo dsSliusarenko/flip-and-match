@@ -24,7 +24,7 @@ export class FlipCardsRenderComponent implements OnInit, AfterViewInit, OnDestro
   constructor(private gameStatusService: GameStatusService) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.textToRender = this.inputText.split('');
 
     this.subscriptions.add(

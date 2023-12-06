@@ -32,7 +32,6 @@ html, body {
 
     height: 3rem;
     padding: 0 1rem 0 1rem;
-
     font-weight: bold;
     font-size: 2rem;
     background-color: white;
@@ -42,7 +41,6 @@ html, body {
   .button:hover {
     @extend .black-shadow;
   }
-;
 }
 
 @mixin letter-square {
@@ -123,7 +121,6 @@ html, body {
     .level:hover {
       @extend .black-shadow;
     }
-  ;
 
     div {
       margin-right: 0.5rem;
@@ -200,23 +197,11 @@ html, body {
     .position {
       display: flex;
       justify-content: space-between;
-
-      &__time {
-
-      }
-
-      &__name {
-
-      }
     }
   }
 }
 
 .levels {
-  //display: flex;
-  //flex-direction: column;
-  //justify-content: center;
-
   .timer {
     display: flex;
     justify-content: center;

@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {CardsMatrixComponent} from "./cards-matrix.component";
 import {IconModule} from "../icon/icon.module";
 
@@ -15,4 +15,5 @@ import {IconModule} from "../icon/icon.module";
     CardsMatrixComponent
   ]
 })
-export class CardMatrixModule { }
+export class CardMatrixModule {
+}
