@@ -3,6 +3,7 @@ import {Deck} from "../../components/home/home";
 import {Card, IconsArray, Levels} from "../../components/levels/levels";
 import {Observable, Subject, takeUntil, timer} from 'rxjs';
 import {NavigationExtras, Router} from "@angular/router";
+import {GameStatusService} from "../../services/game-status.service";
 
 @Component({
   selector: 'fam-cards-matrix',
@@ -24,7 +25,7 @@ export class CardsMatrixComponent implements OnInit {
   cardsToShow: Card[] = [];
   icons: string[] = IconsArray;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private gameStatusService: GameStatusService) {
   }
 
   ngOnInit(): void {
@@ -127,6 +128,7 @@ export class CardsMatrixComponent implements OnInit {
       }
     };
 
+    this.gameStatusService.setIsLevelPassedTrue();
     this.router.navigate(['/win'], queryParams);
   }
 }

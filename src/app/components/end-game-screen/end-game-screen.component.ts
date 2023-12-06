@@ -63,6 +63,7 @@ export class EndGameScreenComponent implements OnInit, OnDestroy {
 
       this.scoreChartService.makeNewRecord(scoreRecord, this.selectedDifficultyLevel);
       this.router.navigate(['/home']);
+      this.gameStatusService.setIsLevelPassedFalse();
     }
   }
 

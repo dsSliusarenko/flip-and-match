@@ -5,7 +5,8 @@ import {BehaviorSubject} from "rxjs";
   providedIn: "root"
 })
 export class GameStatusService {
-  isGameStarted: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  private isGameStarted: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  private isLevelPassed: boolean = false;
 
   setIsGameStartedTrue(): void {
     this.isGameStarted.next(true);
@@ -17,5 +18,17 @@ export class GameStatusService {
 
   get isGameStartedState(): BehaviorSubject<boolean> {
     return this.isGameStarted;
+  }
+
+  setIsLevelPassedTrue(): void {
+    this.isLevelPassed = true;
+  }
+
+  setIsLevelPassedFalse(): void {
+    this.isLevelPassed = false;
+  }
+
+  get isLevelPassedState(): boolean {
+    return this.isLevelPassed;
   }
 }

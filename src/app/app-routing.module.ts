@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from "./components/home/home.component";
 import {EndGameScreenComponent} from "./components/end-game-screen/end-game-screen.component";
+import {EndGameScreenGuard} from "./utils/end-game-screen.guard";
 
 const famRoutes: Routes = [
   {
@@ -20,7 +21,7 @@ const famRoutes: Routes = [
   {
     path: 'win',
     component: EndGameScreenComponent,
-    // canActivate: [EndGameScreenGuard]
+    canActivate: [EndGameScreenGuard]
   },
 ];
 
