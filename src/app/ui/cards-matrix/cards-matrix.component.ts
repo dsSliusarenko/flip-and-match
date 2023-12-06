@@ -19,9 +19,9 @@ export class CardsMatrixComponent implements OnInit {
   destroy: Subject<any> = new Subject();
   timer: number = 0;
 
-  selectedDeck!: any;
+  selectedDeck!: Deck;
   pairsAmount!: number;
-  cardsToShow: any[] = [];
+  cardsToShow: Card[] = [];
   icons: string[] = IconsArray;
 
   constructor(private router: Router) {

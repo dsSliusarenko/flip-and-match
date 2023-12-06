@@ -1,6 +1,6 @@
 export interface Card {
   id: number;
-  value: number;
+  value: number | string;
   show: boolean;
   matched?: boolean
 }

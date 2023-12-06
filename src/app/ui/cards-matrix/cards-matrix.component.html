@@ -12,7 +12,7 @@
           <mat-icon [svgIcon]="'one'" *ngIf="selectedDeck === Deck.NUMBERS"></mat-icon>
         </div>
         <div class="flip-square-back">
-          <mat-icon [svgIcon]="card.value" *ngIf="selectedDeck === Deck.ICONS"></mat-icon>
+          <mat-icon [svgIcon]="card.value.toString()" *ngIf="selectedDeck === Deck.ICONS"></mat-icon>
           <span *ngIf="selectedDeck === Deck.NUMBERS">{{ card.value }}</span>
         </div>
       </div>
