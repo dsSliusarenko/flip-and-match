@@ -211,7 +211,7 @@ html, body {
     @include buttons-container;
 
     .button {
-      background-color: salmon;
+      background-color: $purple-button-background;
     }
   }
 }
@@ -233,7 +233,7 @@ html, body {
       cursor: pointer;
 
       .flip-square-front {
-        background-color: $turquoise-level-card-background;
+        background-color: $purple-deck-card-background;
         transition: 0.5s;
       }
 
@@ -278,7 +278,7 @@ html, body {
     }
 
     .red-background {
-      background-color: red;
+      background-color: $red-dialog-button-background;
     }
   }
 

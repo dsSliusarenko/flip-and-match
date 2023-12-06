@@ -9,17 +9,17 @@ export class ScoreChartService {
   private scoreChart: ScoreChartExtended = {
     easy: {
       title: 'easy',
-      color: '#00FF01',
+      color: '#6cd26c',
       records: []
     },
     medium: {
       title: 'medium',
-      color: '#FFFF01',
+      color: '#f3f351',
       records: []
     },
     hard: {
       title: 'hard',
-      color: '#FA8072',
+      color: '#ec786a',
       records: []
     }
   }
