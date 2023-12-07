@@ -169,5 +169,13 @@ export class IconModule {
       'anchor',
       domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/mat-anchor.svg'),
     );
+    matIconRegistry.addSvgIcon(
+      'arrow-left',
+      domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/mat-arrow-left.svg'),
+    );
+    matIconRegistry.addSvgIcon(
+      'arrow-right',
+      domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/mat-arrow-right.svg'),
+    );
   }
 }

@@ -21,7 +21,8 @@
       <span>{{levels.hard.title | uppercase}}</span>
     </div>
   </div>
-  <fam-score-chart></fam-score-chart>
+  <fam-score-chart class="web"></fam-score-chart>
+  <fam-score-chart-mobile class="mobile" [initSlidesAmount]="1"></fam-score-chart-mobile>
   <div class="reset-button">
     <div class="button" (click)="openDialog()">
       RESET SCORES

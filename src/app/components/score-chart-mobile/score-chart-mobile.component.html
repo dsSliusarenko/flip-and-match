@@ -1,0 +1,26 @@
+<div class="score-chart-mobile">
+  <div class="score-chart-mobile__title">
+    <span>High Scores</span>
+  </div>
+  <div class="score-chart-mobile__carousel">
+    <mat-icon [svgIcon]="'arrow-left'" (click)="prevSlide()"></mat-icon>
+    <div class="slides">
+      <div class="slide" *ngFor="let slide of visibleSlides" data-aos="fade-left" data-aos-duration="1000">
+        <div class="slide__content" [style.background-color]="slide.color">
+          <div class="position" *ngFor="let record of slide.records">
+            <div class="position__time">
+              <span>{{ record.time * 1000 | date:'mm:ss' }}</span>
+            </div>
+            <div class="position__name">
+              <span>{{ record.playerName }}</span>
+            </div>
+          </div>
+        </div>
+        <div class="slide__title">
+          <span>{{ slide.title | uppercase }}</span>
+        </div>
+      </div>
+    </div>
+    <mat-icon [svgIcon]="'arrow-right'" (click)="nextSlide()"></mat-icon>
+  </div>
+</div>

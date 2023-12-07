@@ -131,6 +131,10 @@ html, body {
     }
   }
 
+  .mobile {
+    display: none;
+  }
+
   .reset-button {
     @include buttons-container;
   }
@@ -472,6 +476,14 @@ html, body {
 }
 
 @media (max-width: 480px) {
+  @mixin border-solid-black {
+    border: 2px solid black;
+  }
+
+  @mixin border-radius-1rem {
+    border-radius: 1rem;
+  }
+
   .container-fluid {
     height: 100vh;
     overflow: auto;
@@ -494,6 +506,14 @@ html, body {
           height: 2.5rem;
         }
       }
+    }
+
+    .mobile {
+      display: block;
+    }
+
+    .web {
+      display: none
     }
 
     .difficulty-select {
@@ -554,4 +574,59 @@ html, body {
       grid-template-columns: repeat(4, 1fr);
     }
   }
+
+  .score-chart-mobile {
+    &__title {
+      display: flex;
+      justify-content: center;
+
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    &__carousel {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      mat-icon {
+        width: 3rem;
+        height: 3rem;
+      }
+
+      .slides {
+
+
+        .slide {
+          margin-top: 0.5rem;
+
+          &__content {
+            @include border-radius-1rem;
+            @include border-solid-black;
+
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+            width: 12rem;
+
+            .position {
+              display: flex;
+              justify-content: space-between;
+            }
+          }
+
+          &__title {
+            display: flex;
+            justify-content:center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+
+
 }

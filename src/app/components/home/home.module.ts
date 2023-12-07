@@ -6,6 +6,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {IconModule} from "../../ui/icon/icon.module";
 import {ScoreChartModule} from "../score-chart/score-chart.module";
 import {RouterLink} from "@angular/router";
+import {ScoreChartMobileModule} from "../score-chart-mobile/score-chart-mobile.module";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {RouterLink} from "@angular/router";
     IconModule,
     MatIconModule,
     ScoreChartModule,
-    RouterLink
+    RouterLink,
+    ScoreChartMobileModule
   ]
 })
 export class HomeModule {
