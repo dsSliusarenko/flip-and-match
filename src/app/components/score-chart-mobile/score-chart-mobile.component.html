@@ -5,7 +5,7 @@
   <div class="score-chart-mobile__carousel">
     <mat-icon [svgIcon]="'arrow-left'" (click)="prevSlide()"></mat-icon>
     <div class="slides">
-      <div class="slide" *ngFor="let slide of visibleSlides" data-aos="fade-left" data-aos-duration="1000">
+      <div class="slide flip-in-ver-left" *ngFor="let slide of visibleSlides" data-aos="fade-left" data-aos-duration="1000">
         <div class="slide__content" [style.background-color]="slide.color">
           <div class="position" *ngFor="let record of slide.records">
             <div class="position__time">
