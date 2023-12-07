@@ -270,6 +270,10 @@ html, body {
   background-color: $blue-dialog-background;
   padding: 0.75rem;
 
+  &__content {
+    text-align: center;
+  }
+
   &__buttons {
     @include buttons-container;
 
@@ -464,5 +468,90 @@ html, body {
   }
   100% {
     background-position: 0 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container-fluid {
+    height: 100vh;
+    overflow: auto;
+  }
+
+  .links {
+    display: flex;
+    justify-content: center;
+  }
+
+  fam-flip-cards-render {
+    display: none;
+  }
+
+  .home {
+    .deck-select {
+      .decks {
+        .deck {
+          width: 2.5rem;
+          height: 2.5rem;
+        }
+      }
+    }
+
+    .difficulty-select {
+      display: flex;
+      flex-direction: column;
+
+      .level {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    .reset-button {
+      .button {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .score-chart {
+    .charts {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      fam-render-chart {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+      }
+
+      fam-score-chart:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .custom-dialog {
+    padding: 0.5rem;
+
+    &__content {
+      .phones-view {
+        display: block;
+      }
+    }
+
+    &__buttons {
+      .button {
+        span {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
+  .cards-matrix {
+    .cards-matrix__cards {
+      @include grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 }
