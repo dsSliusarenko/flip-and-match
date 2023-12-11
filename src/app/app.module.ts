@@ -11,6 +11,7 @@ import {LevelsModule} from "./components/levels/levels.module";
 import {ScoreChartModule} from "./components/score-chart/score-chart.module";
 import {DialogModule} from "./ui/dialog/dialog.module";
 import {EndGameScreenModule} from "./components/end-game-screen/end-game-screen.module";
+import {BreakpointObserver} from "@angular/cdk/layout";
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import {EndGameScreenModule} from "./components/end-game-screen/end-game-screen.
     DialogModule,
     EndGameScreenModule
   ],
-  providers: [],
+  providers: [BreakpointObserver],
   bootstrap: [AppComponent]
 })
 export class AppModule {
