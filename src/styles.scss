@@ -561,6 +561,12 @@ html, body {
       }
     }
   }
+  
+  .cards-matrix{
+    &__timer {
+      margin-top: 2rem;
+    }
+  }
 
   .score-chart {
     .charts {
