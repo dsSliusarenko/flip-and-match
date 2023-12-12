@@ -1,5 +1,5 @@
 <div class="end-game-screen">
-  <fam-flip-cards-render [inputText]="environment.winTitle"
+  <fam-flip-cards-render [inputText]="textToRender"
                          [animationType]="AnimationType.END_GAME"></fam-flip-cards-render>
   <div class="level-chart">
     <fam-render-chart [chartData]="chart.easy" *ngIf="selectedDifficultyLevel===Levels.EASY"></fam-render-chart>

@@ -8,6 +8,7 @@ import {Levels} from "../levels/levels";
 import {Subscription} from "rxjs";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {GameStatusService} from "../../services/game-status.service";
+import {BreakpointService} from "../../services/breakpoint.service";
 
 @Component({
   selector: 'fam-end-game-screen',
@@ -17,7 +18,6 @@ import {GameStatusService} from "../../services/game-status.service";
 export class EndGameScreenComponent implements OnInit, OnDestroy {
   protected readonly AnimationType = AnimationType;
   protected readonly Levels = Levels;
-  protected readonly environment = environment;
 
   chart!: ScoreChartExtended;
   selectedDifficultyLevel!: Levels;
@@ -27,13 +27,19 @@ export class EndGameScreenComponent implements OnInit, OnDestroy {
 
   scoreRecordForm!: FormGroup;
 
+  textToRender: string = environment.webWinTitle;
+
   constructor(
     private scoreChartService: ScoreChartService,
     private route: ActivatedRoute,
     private router: Router,
     private formBuilder: FormBuilder,
-    private gameStatusService: GameStatusService
+    private gameStatusService: GameStatusService,
+    private brakePointService: BreakpointService
   ) {
+    if (this.brakePointService.isScreenMobile) {
+      this.textToRender = environment.mobileWinTitle;
+    }
   }
 
   ngOnInit(): void {

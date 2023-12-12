@@ -491,15 +491,6 @@ html, body {
 
   .links {
     display: none;
-    //justify-content: center;
-    //margin: 0.5rem 0 0 0;
-    //
-    //.link {
-    //  mat-icon {
-    //    width: 2rem;
-    //    height: 2rem;
-    //  }
-    //}
   }
 
   .home {
@@ -561,7 +552,7 @@ html, body {
       }
     }
   }
-  
+
   .cards-matrix{
     &__timer {
       margin-top: 2rem;
@@ -664,6 +655,11 @@ html, body {
         }
       }
     }
+  }
+
+  .flip-card-render {
+    margin-top: 1.5rem;
+    display: flex;
   }
 
   @-webkit-keyframes flip-in-ver-left {
