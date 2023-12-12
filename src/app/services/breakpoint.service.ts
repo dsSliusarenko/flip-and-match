@@ -14,12 +14,12 @@ export class BreakpointService {
       .observe([Breakpoints.XSmall])
       .subscribe((state: BreakpointState) => {
         if (state.matches) {
-          this.setMobileScreen(state);
+          this.setMobileScreen();
         }
       });
   }
 
-  private setMobileScreen(state: BreakpointState): void {
+  private setMobileScreen(): void {
     this.isCurrentScreenMobile = true;
   }
 
